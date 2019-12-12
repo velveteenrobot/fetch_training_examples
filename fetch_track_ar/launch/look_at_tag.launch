@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find fetch_track_ar)/launch/fetch_indiv.launch"/>
+  <node name="look_at_tag" pkg="fetch_track_ar" type="track_marker.py" output="screen" />
+  <node name="throttle" pkg="topic_tools" type="throttle" args="messages /ar_pose_marker 1.0 /ar_pose_marker_throttle" output="screen" />
+</launch>
